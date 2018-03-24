@@ -1,7 +1,8 @@
 import Vue from 'vue';
 import Router from 'vue-router';
 import Home from './views/Home.vue';
-import About from './views/About.vue';
+import MyHistory from './views/MyHistory.vue';
+import Contacts from './views/Contacts.vue';
 
 Vue.use(Router);
 
@@ -13,9 +14,14 @@ export default new Router({
       component: Home,
     },
     {
-      path: '/about',
-      name: 'about',
-      component: About,
+      path: '/history',
+      name: 'MyHistory',
+      component: MyHistory,
+    },
+    {
+      path: '/contacts',
+      name: 'Contacts',
+      component: Contacts,
     },
   ],
 });
