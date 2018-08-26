@@ -15,7 +15,6 @@ axios.interceptors.request.use((config) => {
 
 export default {
   verifyCelebrity(file) {
-    console.log('verifyCelebrity ::::::: ', file);
     return new Promise((resolve, reject) => {
       const config = {
         headers: {
@@ -26,14 +25,8 @@ export default {
       payload.append('image', file);
 
       axios.post('/route', payload, config)
-        .then((response) => {
-          console.log('m.m.m.m.m', response);
-          resolve(response.data);
-        })
-        .catch((err) => {
-          console.log('e.e.e.e.e.', err);
-          reject(err);
-        });
+        .then(response => resolve(response.data))
+        .catch(err => reject(err));
     });
   },
 };
